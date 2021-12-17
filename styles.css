@@ -18,7 +18,8 @@ body {
 }
 
 #pallete1,
-#pallete2 {
+#pallete2,
+#pallete3 {
     color: white;
 }
 
@@ -42,7 +43,7 @@ body {
 }
 
 .container button:hover {
-    background-color: #1f1f1f;
+    background-color: #ffffff;
     color: #000;
 }
 
