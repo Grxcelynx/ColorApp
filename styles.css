@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+    to right,
+    #3056ff 0%,
+    #3056ff 33%,
+    #ff3033 33%,
+    #ff282c 67%,
+    #2989d8 67%,
+    #2989d8 100%
+    );
+}
+
+#pallete1,
+#pallete2 {
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    height: 25vh;
+}
+
+.container p {
+    margin: 5px;
+}
+
+.container button {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 5px;
+}
+
+.container button:hover {
+    background-color: #1f1f1f;
+    color: #000;
+}
+
+.colorize {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: 75vh;
+    align-items: center;
+}
+
+.colorize .color {
+    background-color: transparent;
+    padding: 98px;
+}
