@@ -20,6 +20,25 @@ function generateRandom() {
 //allow user to copy color hex
 const color = document.querySelectorAll(".color");
 color.forEach((element) => {
-    element.addEventListener("click", copHexColor);
+    element.addEventListener("click", copyHexColor);
 });
 
+function selectHex() {
+    let colorElement = event.target;
+    let range;
+
+    if(document.selection) {
+        range = document.body.creteTextRange();
+        range.moveToElement(colorElement);
+        range.selectNode(colorElement);
+
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+    }
+}
+
+function copyHexColor() {
+    selectHex();
+    alert(`Color Hex ${event.target.innerText} copied to clipboard`);
+    document.execCommand("copy", );
+}
