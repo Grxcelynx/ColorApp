@@ -22,9 +22,11 @@ const color = document.querySelectorAll(".color");
 color.forEach((element) => {
     element.addEventListener("click", copyHexColor);
 });
-
+//WHERE IT GETS MESSY 
+// I've found that execCommand is not used as much anyomore and this use of event doesn't seem right
 function selectHex() {
     let colorElement = event.target;
+  //in VS code event has a line through it 
     let range;
 
     if(document.selection) {
@@ -38,7 +40,17 @@ function selectHex() {
 }
 
 function copyHexColor() {
-    selectHex();
+    const el = document.createElement('textarea');
+    el.value = event.target.innerText;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    el.style.opacity = '0';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
     alert(`Color Hex ${event.target.innerText} copied to clipboard`);
-    document.execCommand("copy", );
+    console.log(el);
+    document.body.removeChild(el);
+  // as does execCommand 
 }
