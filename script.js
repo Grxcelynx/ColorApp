@@ -1,4 +1,5 @@
-const body = document.body;
+// const body = document.body;
+const colorize = document.getElementById("colorize");
 const color1 = document.getElementById("pallete1");
 const color2 = document.getElementById("pallete2");
 const color3 = document.getElementById("pallete3");
@@ -13,7 +14,7 @@ function generateRandom() {
     color2.innerHTML = `#${randomize1}`;
     color3.innerHTML = `#${randomize1}`;
 
-    body.style.background = `linear-gradient(to right, #${randomize1} 0%, #${randomize1} 33%, #${randomize2} 33%, #${randomize2} 67%, #${randomize3} 67%,#${randomize3} 100%)`;
+    colorize.style.background = `linear-gradient(to right, #${randomize1} 0%, #${randomize1} 33%, #${randomize2} 33%, #${randomize2} 67%, #${randomize3} 67%,#${randomize3} 100%)`;
     
 }
 
@@ -30,7 +31,7 @@ function selectHex() {
     let range;
 
     if(document.selection) {
-        range = document.body.creteTextRange();
+        range = document.colorize.creteTextRange();
         range.moveToElement(colorElement);
         range.selectNode(colorElement);
 
@@ -46,11 +47,11 @@ function copyHexColor() {
     el.style.position = 'absolute';
     el.style.left = '-9999px';
     el.style.opacity = '0';
-    document.body.appendChild(el);
+    document.colorize.appendChild(el);
     el.select();
     document.execCommand('copy');
     alert(`Color Hex ${event.target.innerText} copied to clipboard`);
     console.log(el);
-    document.body.removeChild(el);
+    document.colorize.removeChild(el);
   // as does execCommand 
 }
